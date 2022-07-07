@@ -7,10 +7,12 @@ const cors =require("cors");
 const http=require('http');
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
-app.use(cors());
+// app.use(cors());s
 app.use(router);
+app.use(express.static('../frontend/build'));
 const server =http.createServer(app);
 const io= new Server(server);
+
 let InitialCode=
 `
 #include<iostream>
