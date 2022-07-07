@@ -49,7 +49,7 @@ function App() {
       language: "c++"
     }
     try{
-      const output= await axios.post("http://localhost:5500/code", payload);
+      const output= await axios.post("/code", payload);
       setResult(output.data.output);
       console.log(code);
 
